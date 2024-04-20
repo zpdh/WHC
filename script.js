@@ -59,7 +59,9 @@ shamanBtn.addEventListener('click', () => {
 
 calcBtn.addEventListener('click', () => {
     let value = calculateHealing()
-    if (health.value < 0 || health.value > 100000) {
+    if (baseHP.value < 0){
+        result.textContent = `Invalid base health value.`
+    }else if (health.value < 0 || health.value > 100000) {
         result.textContent = `Invalid health value.`
     } else if (value < 0) {
         result.textContent = `invalid WD/HE values.`
