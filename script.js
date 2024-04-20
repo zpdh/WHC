@@ -8,6 +8,7 @@ const calcBtn = document.getElementById('calculate')
 const mageBtn = document.getElementById('mage')
 const shamanBtn = document.getElementById('shaman')
 const modeText = document.getElementById('mode')
+const baseHP = document.getElementById('basehp')
 
 let mode = 'Shaman'
 
@@ -24,7 +25,7 @@ function calculateHealing() {
     let wtrdmgNDP = wtrdmg.value
 
     if (radianceStatus == true) {
-        healthNDP = health.value * 1.2
+        healthNDP = (health.value - baseHP.value)*1.2 + baseHP.value
         healeffNDP = healeff.value * 1.2
         wtrdmgNDP = wtrdmg.value * 1.2
     } if (mode == 'Shaman') {
