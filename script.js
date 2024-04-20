@@ -12,12 +12,20 @@ const modeText = document.getElementById('mode')
 let mode = 'Shaman'
 
 function calculateHealing() {
-    if (mode == 'Shaman') {
-        let value = (health.value/4) * (1+(healeff.value/100)) * (1+((wtrdmg.value/100)*0.3))
+    let healthNDP = health.value
+    let healeffNDP = healeff.value
+    let wtrdmgNDP = wtrdmg.value
+
+    if (radianceStatus == true) {
+        healthNDP = health.value * 1.2
+        healeffNDP = healeff.value * 1.2
+        wtrdmgNDP = wtrdmg.value * 1.2
+    } if (mode == 'Shaman') {
+        let value = (healthNDP/4) * (1+(healeffNDP/100)) * (1+((wtrdmgNDP/100)*0.3))
         value = Math.round(value * 10) / 10
         return value
     } else {
-        let value = (health.value/5) * (1+(healeff.value/100)) * (1+((wtrdmg.value/100)*0.3))
+        let value = (healthNDP/5) * (1+(healeffNDP/100)) * (1+((wtrdmgNDP/100)*0.3))
         value = Math.round(value * 10) / 10
         return value
     }
@@ -50,4 +58,9 @@ calcBtn.addEventListener('click', () => {
     } else result.textContent = `Heal/Spell: ${value}`
 })
 
-
+let radianceStatus = false
+document.getElementById("radiance").addEventListener("click", () => {
+    if (radianceStatus == false) {
+        radianceStatus = true
+    } else radianceStatus = false
+})
