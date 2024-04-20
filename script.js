@@ -28,7 +28,7 @@ function calculateHealing() {
         healthNDP = (health.value - baseHP.value)*1.2 + Number(baseHP.value)
         healeffNDP = healeff.value * 1.2
         wtrdmgNDP = wtrdmg.value * 1.2
-    } if (mode == 'Shaman') {
+    } else if (mode == 'Shaman') {
         let value = (healthNDP/4) * (1+(healeffNDP/100)) * (1+((wtrdmgNDP/100)*0.3))
         value = Math.round(value * 10) / 10
         return value
@@ -40,6 +40,7 @@ function calculateHealing() {
 }
 
 function resetValues() {
+    baseHP.value = ''
     health.value = ''
     healeff.value = ''
     wtrdmg.value = ''
