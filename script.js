@@ -64,6 +64,6 @@ calcBtn.addEventListener('click', () => {
     }else if (health.value < 0 || health.value > 100000) {
         result.textContent = `Invalid health value.`
     } else if (value < 0) {
-        result.textContent = `invalid WD/HE values.`
+        result.textContent = `invalid WD/HE/HP values.`
     } else result.textContent = `Heal/Spell: ${value}`
 })
