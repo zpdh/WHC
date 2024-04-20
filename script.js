@@ -11,6 +11,13 @@ const modeText = document.getElementById('mode')
 
 let mode = 'Shaman'
 
+let radianceStatus = false
+document.getElementById("radiance").addEventListener("click", () => {
+    if (radianceStatus == false) {
+        radianceStatus = true
+    } else radianceStatus = false
+}) 
+
 function calculateHealing() {
     let healthNDP = health.value
     let healeffNDP = healeff.value
@@ -57,10 +64,3 @@ calcBtn.addEventListener('click', () => {
         result.textContent = `invalid WD/HE values.`
     } else result.textContent = `Heal/Spell: ${value}`
 })
-
-let radianceStatus = false
-document.getElementById("radiance").addEventListener("click", () => {
-    if (radianceStatus == false) {
-        radianceStatus = true
-    } else radianceStatus = false
-}) 
