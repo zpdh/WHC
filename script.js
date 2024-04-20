@@ -25,7 +25,7 @@ function calculateHealing() {
     let wtrdmgNDP = wtrdmg.value
 
     if (radianceStatus == true) {
-        healthNDP = (health.value - baseHP.value)*1.2 + baseHP.value
+        healthNDP = (health.value - baseHP.value)*1.2 + Number(baseHP.value)
         healeffNDP = healeff.value * 1.2
         wtrdmgNDP = wtrdmg.value * 1.2
     } if (mode == 'Shaman') {
