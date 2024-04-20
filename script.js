@@ -63,4 +63,4 @@ document.getElementById("radiance").addEventListener("click", () => {
     if (radianceStatus == false) {
         radianceStatus = true
     } else radianceStatus = false
-})
+}) 
