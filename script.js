@@ -28,7 +28,7 @@ function calculateHealing() {
         healthNDP = (health.value - baseHP.value)*1.2 + Number(baseHP.value)
         healeffNDP = healeff.value * 1.2
         wtrdmgNDP = wtrdmg.value * 1.2
-    } else if (mode == 'Shaman') {
+    } if (mode == 'Shaman') {
         let value = (healthNDP/4) * (1+(healeffNDP/100)) * (1+((wtrdmgNDP/100)*0.3))
         value = Math.round(value * 10) / 10
         return value
@@ -65,6 +65,6 @@ calcBtn.addEventListener('click', () => {
     }else if (health.value < 0 || health.value > 100000 || baseHP.value > health.value) {
         result.textContent = `Invalid health value.`
     } else if (value < 0) {
-        result.textContent = `invalid WD/HE values.`
+        result.textContent = `invalid WD/HE/HP values.`
     } else result.textContent = `Heal/Spell: ${value}`
 })
