@@ -1,3 +1,5 @@
+// This code is DOGSHIT btw. Radiance stuff made by tomex/jhil.
+
 const health = document.getElementById('health')
 const healeff = document.getElementById('healeff')
 const wtrdmg = document.getElementById('wtrdmg')
@@ -41,7 +43,11 @@ shamanBtn.addEventListener('click', () => {
 
 calcBtn.addEventListener('click', () => {
     let value = calculateHealing()
-    result.textContent = `Heal/Spell: ${value}`
+    if (health.value < 0 || health.value > 100000) {
+        result.textContent = `Invalid health value.`
+    } else if (value < 0) {
+        result.textContent = `invalid WD/HE values.`
+    } else result.textContent = `Heal/Spell: ${value}`
 })
 
 
